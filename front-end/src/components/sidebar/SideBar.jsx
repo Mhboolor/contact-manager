@@ -3,7 +3,7 @@ import { AddContact, Navbar, SearchBox } from './content'
 
 function SideBar() {
   return (
-    <aside>
+    <aside className='flex flex-col gap-5'>
         <SearchBox/>
         <Navbar/>
         <AddContact/>
