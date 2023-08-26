@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineUser, AiOutlineTags } from "react-icons/ai";
 import {
   MdOutlineFavoriteBorder,
@@ -8,10 +8,7 @@ import {
 } from "react-icons/md";
 
 function Navbar() {
-
-
-  const [drop , setDrop] = useState(false);
-
+  const [drop, setDrop] = useState(false);
 
   return (
     <nav className="text-white">
@@ -37,21 +34,47 @@ function Navbar() {
         <li>
           <button
             className={`flex items-center justify-between py-1 px-1 rounded-md duration-200 ease-in-out hover:bg-gray-2 w-full`}
-            onClick={() => setDrop(prev => !prev)}
+            onClick={() => setDrop((prev) => !prev)}
           >
             <div className="flex items-center justify-center gap-2">
               <AiOutlineTags className="text-xl" />
               برچسب ها
             </div>
-            {
-              drop ? <MdArrowDropUp/> : <MdArrowDropDown/>
-            }
+            {drop ? <MdArrowDropUp /> : <MdArrowDropDown />}
           </button>
-          <ul className={`flex-col gap-1 text-sm font-semibold text-gray-400 ${drop ? "hidden" : "flex"}`}>
-            <li><NavLink className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}>خانواده</NavLink></li>
-            <li><NavLink className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}>دوست</NavLink></li>
-            <li><NavLink className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}>همکار</NavLink></li>
-            <li><NavLink className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}>ورزش</NavLink></li>
+          <ul
+            className={`flex-col gap-1 text-sm font-semibold text-gray-400 ${
+              drop ? "flex" : "hidden"
+            }`}
+          >
+            <li>
+              <NavLink
+                className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+              >
+                خانواده
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+              >
+                دوست
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+              >
+                همکار
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+              >
+                ورزش
+              </NavLink>
+            </li>
           </ul>
         </li>
       </ul>
