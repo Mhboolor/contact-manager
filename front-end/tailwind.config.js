@@ -9,6 +9,7 @@ module.exports = {
           2: "rgb(63,63,70)",
           3: "rgb(63,63,63)",
         },
+        btnBlue : "#579FFF",
       },
       boxShadow : {
         container : "0px 0px 40px 0px rgb(60,60,60)",
