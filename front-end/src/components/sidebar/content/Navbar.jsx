@@ -11,7 +11,7 @@ function Navbar() {
   const [drop, setDrop] = useState(false);
 
   return (
-    <nav className="text-white">
+    <nav className="text-white flex-1">
       <ul className="flex flex-col gap-1">
         <li>
           <NavLink
