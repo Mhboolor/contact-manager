@@ -41,7 +41,7 @@ function Info() {
           readOnly
         />
       </div>
-      <div className="flex items-center gap-2 bg-black rounded-md p-3 col-span-2">
+      <div className="flex items-center gap-2 bg-black rounded-md p-3 sm:col-span-2">
         <IoMdHeart className="text-xl" />
         <input
           type="text"
