@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SideBar from "./components/sidebar/SideBar";
 import { MdClose, MdMenu } from "react-icons/md";
-import User from "./components/user/User";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -18,7 +18,7 @@ function App() {
           </button>
           <div className={`absolute left-0 top-0 w-full h-full bg-black/40 z-20 ${!menu ? "block" : "hidden"} md:hidden`} onClick={() => setMenu((prev) => !prev)}></div>
           <SideBar menu={menu} setMenu={setMenu} />
-          <User/>
+          <Outlet/>
         </div>
       </div>
     </div>
