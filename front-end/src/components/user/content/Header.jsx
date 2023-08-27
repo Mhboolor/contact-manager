@@ -15,19 +15,19 @@ function Header() {
         <p className="text-white text-xl font-semibold">محمدحسین بولوری</p>
         <p>مجرد</p>
         <div className="flex gap-2 items-center text-white text-xl">
-          <button className=" bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
+          <button className="bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
             <MdPhone />
           </button>
-          <button className=" bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
+          <button className="bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
             <MdCamera />
           </button>
-          <button className=" bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
+          <button className="bg-zinc-800 hover:bg-zinc-600 rounded-md p-1">
             <MdEmail />
           </button>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          <p className=" bg-zinc-900 rounded-md px-1 py-0.5">خانواده</p>
-          <p className=" bg-zinc-900 rounded-md px-1 py-0.5">همکار</p>
+          <p className=" bg-zinc-800 rounded-md px-1 py-0.5">خانواده</p>
+          <p className=" bg-zinc-800 rounded-md px-1 py-0.5">همکار</p>
         </div>
         <p className="text-sm">پیشرو نوآوران , برنامه نویس فرانت </p>
       </div>
