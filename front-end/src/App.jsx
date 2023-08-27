@@ -11,7 +11,7 @@ function App() {
       <div className="bg-gray-3 rounded-xl h-full p-1.5">
         <div className="bg-black rounded-xl shadow-container flex gap-5 p-5 h-full relative">
           <button
-            className="flex items-center justify-center text-gray-500 hover:text-white text-3xl absolute left-4 md:hidden"
+            className="flex items-center justify-center text-gray-500 hover:text-white text-3xl absolute left-8 md:hidden"
             onClick={() => setMenu((prev) => !prev)}
           >
             {!menu ? <MdClose /> : <MdMenu />}
