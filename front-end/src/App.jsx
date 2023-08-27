@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Contacts from "./components/contacts/Contacts";
 import SideBar from "./components/sidebar/SideBar";
 import { MdClose, MdMenu } from "react-icons/md";
+import User from "./components/user/User";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -17,7 +17,7 @@ function App() {
             {!menu ? <MdClose /> : <MdMenu />}
           </button>
           <SideBar menu={menu} setMenu={setMenu} />
-          <Contacts />
+          <User/>
         </div>
       </div>
     </div>
