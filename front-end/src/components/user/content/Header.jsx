@@ -1,9 +1,19 @@
 import React from "react";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { MdCamera, MdEmail, MdPhone } from "react-icons/md";
+import { TbDots } from "react-icons/tb";
 
 function Header() {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 text-gray-400 sm:flex-row">
+    <div className="flex flex-col items-center justify-center gap-5 text-gray-400 sm:flex-row relative">
+      <div className="flex items-center gap-2 text-xl absolute top-0 right-8">
+        <button>
+          <TbDots />
+        </button>
+        <button>
+          <IoMdHeartEmpty />
+        </button>
+      </div>
       <div>
         <img
           src="./images/users/user-1.jpeg"
