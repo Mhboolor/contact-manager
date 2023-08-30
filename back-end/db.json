@@ -14,8 +14,8 @@
       "address": "ایران , تهران , میدان آزادی",
       "home": "خیابان سبزه زار , کوچه آذر , پلاک 9",
       "relation": "برادر",
-      "reminder": [{ "id": "", "text": "" }],
-      "note": [{ "id": "", "title": "", "text": "" }],
+      "reminder": [],
+      "note": [],
       "fav": "false"
     },
     {
@@ -32,8 +32,8 @@
       "address": "ایران , مشهد , بالاشهر",
       "home": "خیابان حرم , کوچه قاسمی , پلاک 24",
       "relation": "خودم",
-      "reminder": [{ "id": "", "text": "" }],
-      "note": [{ "id": "", "title": "", "text": "" }],
+      "reminder": [],
+      "note": [],
       "fav": "false"
     },
     {
@@ -50,8 +50,8 @@
       "address": "ایران , قم , توحید",
       "home": "خیابان مطهری , کوچه 18 , پلاک 96",
       "relation": "آشنا",
-      "reminder": [{ "id": "", "text": "" }],
-      "note": [{ "id": "", "title": "", "text": "" }],
+      "reminder": [],
+      "note": [],
       "fav": "false"
     },
     {
@@ -68,8 +68,8 @@
       "address": "ایران , قم , توحید",
       "home": "خیابان آذر , کوچه 4 , پلاک 196",
       "relation": "آشنا",
-      "reminder": [{ "id": "", "text": "" }],
-      "note": [{ "id": "", "title": "", "text": "" }],
+      "reminder": [],
+      "note": [],
       "fav": "false"
     }
   ]

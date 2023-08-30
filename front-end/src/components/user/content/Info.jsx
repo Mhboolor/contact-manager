@@ -2,7 +2,7 @@ import React from "react";
 import { MdEmail, MdHome, MdLocationPin, MdPhone } from "react-icons/md";
 import { IoMdHeart } from "react-icons/io";
 
-function Info() {
+function Info({ phone, email, address, home, relation }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white font-semibold">
       <div className="flex items-center gap-2 bg-black rounded-md p-3">
@@ -10,7 +10,7 @@ function Info() {
         <input
           type="text"
           className="bg-transparent border-none outline-none flex-1 tracking-wider"
-          value={"09035425899"}
+          value={phone}
           readOnly
         />
       </div>
@@ -19,7 +19,7 @@ function Info() {
         <input
           type="text"
           className="bg-transparent border-none outline-none flex-1 tracking-wider"
-          value={"mohammadhosein.boolori@gmail.com"}
+          value={email}
           readOnly
         />
       </div>
@@ -28,7 +28,7 @@ function Info() {
         <input
           type="text"
           className="bg-transparent border-none outline-none flex-1 tracking-wider"
-          value={"ایران , تهران , میدان آزادی"}
+          value={address}
           readOnly
         />
       </div>
@@ -37,7 +37,7 @@ function Info() {
         <input
           type="text"
           className="bg-transparent border-none outline-none flex-1 tracking-wider"
-          value={"خیابان سبزه زار , کوچه آذر , پلاک 9"}
+          value={home}
           readOnly
         />
       </div>
@@ -46,7 +46,7 @@ function Info() {
         <input
           type="text"
           className="bg-transparent border-none outline-none flex-1 tracking-wider"
-          value={"برادر"}
+          value={relation}
           readOnly
         />
       </div>

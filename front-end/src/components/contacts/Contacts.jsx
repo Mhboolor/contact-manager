@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import {
   selectAllContacts,
   selectContactsStatus,
-  selectContactsError,
 } from "../../future/contacts/contactsSlice";
 import Loading from "../Loading";
 import Error from "../Error";
@@ -15,13 +14,12 @@ function Contacts() {
 
   const contacts = useSelector((state) => selectAllContacts(state));
   const status = useSelector((state) => selectContactsStatus(state));
-  const isError = useSelector((state) => selectContactsError(state));
 
   return (
     <div className="flex flex-col gap-5 flex-1">
       <Header contacts={contacts} />
       <FiltredBox setGrid={setGrid} />
-      {isError ? (
+      {status === "failed" ? (
         <Error />
       ) : status === "pending" ? (
         <Loading />

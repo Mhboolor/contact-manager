@@ -10,7 +10,6 @@ const contactsAdapter = createEntityAdapter({});
 
 const initialState = contactsAdapter.getInitialState({
   status: "idle",
-  error: null,
 });
 
 export const fetchAllContacts = createAsyncThunk(
@@ -35,8 +34,7 @@ const cntactsSlice = createSlice({
         contactsAdapter.setAll(state, action.payload);
       })
       .addCase(fetchAllContacts.rejected, (state, action) => {
-        state.status = "idle";
-        state.error = action.error.message;
+        state.status = "failed";
       });
   },
 });
@@ -45,7 +43,6 @@ export const { selectAll: selectAllContacts, selectById: selectContactById } =
   contactsAdapter.getSelectors((state) => state.contacts);
 
 export const selectContactsStatus = (state) => state.contacts.status;
-export const selectContactsError = (state) => state.contacts.error;
 
 export default cntactsSlice.reducer;
 export const { setAllContacts } = cntactsSlice.actions;
