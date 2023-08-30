@@ -2,29 +2,24 @@ import React from "react";
 import { TbDots } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
-function Contact({ grid }) {
+function Contact({ grid, id, name, last, image, phone, email, relation }) {
   return (
     <Link
+      to={`/${id}`}
       className={`text-zinc-300 gap-4 rounded-md p-2 duration-150 ease-in-out hover:bg-gray-2 flex flex-col items-center text-center hover:text-white ${
         grid ? "sm:flex-col" : "sm:flex-row sm:text-start"
       }`}
     >
       <div>
-        <img
-          src="./images/users/user-1.jpeg"
-          alt="user_image"
-          width={60}
-          height={60}
-          className="rounded-full"
-        />
+        <img src={image} alt="user_image" className="rounded-full w-14 h-14" />
       </div>
       <div className="flex-1 flex flex-col">
-        <p className="text-white">پدر</p>
-        <p>خانواده</p>
+        <p className="text-white">{`${name} ${last}`}</p>
+        <p>{relation}</p>
       </div>
       <div className="flex-1 flex flex-col">
-        <p>0903-542-5899</p>
-        <p>mohammadhosein.boolori@gmail.com</p>
+        <p>{phone}</p>
+        <p>{email}</p>
       </div>
       <div className="flex items-center justify-center">
         <button className="p-1 mx-4 hover:bg-gray-1 rounded-md duration-150 ease-in-out z-10">
