@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "../api/apiSlice";
-import contactsSlice, { fetchAllContacts } from "../future/contacts/contactsSlice";
+import contactsSlice from "../future/contacts/contactsSlice";
 
 export const store = configureStore({
   reducer: {

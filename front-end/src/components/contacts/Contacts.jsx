@@ -8,6 +8,7 @@ import {
   selectContactsStatus,
   selectContactsError,
 } from "../../future/contacts/contactsSlice";
+import Loading from "../Loading";
 
 function Contacts() {
   const [grid, setGrid] = useState(false);
@@ -36,7 +37,7 @@ function Contacts() {
         {isError ? (
           <p className="text-white">error ...</p>
         ) : status === "pending" ? (
-          <p className="text-white">Loading ...</p>
+          <Loading/>
         ) : (
           contacts.map((contact) => <Contact grid={grid} {...contact} key={contact.id}/>)
         )}

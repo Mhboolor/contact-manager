@@ -13,6 +13,10 @@ module.exports = {
       },
       boxShadow : {
         container : "0px 0px 40px 0px rgb(60,60,60)",
+      },
+      animation: {
+        'spin-slow': 'spin 1s linear infinite',
+        'spin-slow-reverse': 'spin 0.5s linear infinite reverse',
       }
     },
   },
