@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "../api/apiSlice";
-import contactsSlice from "../future/contacts/contactsSlice";
+import contactsSlice, { fetchAllContacts } from "../future/contacts/contactsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,3 +11,5 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
+
+store.dispatch(fetchAllContacts())

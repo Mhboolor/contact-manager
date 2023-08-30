@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Contact, FiltredBox, Header } from "./content";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
-  fetchAllContacts,
   selectAllContacts,
   selectContactsStatus,
   selectContactsError,
@@ -14,17 +13,9 @@ import Error from "../Error";
 function Contacts() {
   const [grid, setGrid] = useState(false);
 
-  const dispatch = useDispatch();
-
   const contacts = useSelector((state) => selectAllContacts(state));
   const status = useSelector((state) => selectContactsStatus(state));
   const isError = useSelector((state) => selectContactsError(state));
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchAllContacts());
-    }
-  }, [status, dispatch]);
 
   return (
     <div className="flex flex-col gap-5 flex-1">

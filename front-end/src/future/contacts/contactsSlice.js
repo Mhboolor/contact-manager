@@ -41,11 +41,11 @@ const cntactsSlice = createSlice({
   },
 });
 
-export const { selectAll: selectAllContacts } = contactsAdapter.getSelectors(
-  (state) => state.contacts
-);
-export const selectContactsStatus = (state => state.contacts.status);
-export const selectContactsError = (state => state.contacts.error);
+export const { selectAll: selectAllContacts, selectById: selectContactById } =
+  contactsAdapter.getSelectors((state) => state.contacts);
+
+export const selectContactsStatus = (state) => state.contacts.status;
+export const selectContactsError = (state) => state.contacts.error;
 
 export default cntactsSlice.reducer;
 export const { setAllContacts } = cntactsSlice.actions;
