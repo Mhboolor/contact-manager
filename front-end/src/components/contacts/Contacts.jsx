@@ -9,6 +9,7 @@ import {
   selectContactsError,
 } from "../../future/contacts/contactsSlice";
 import Loading from "../Loading";
+import Error from "../Error";
 
 function Contacts() {
   const [grid, setGrid] = useState(false);
@@ -18,7 +19,7 @@ function Contacts() {
   const contacts = useSelector((state) => selectAllContacts(state));
   const status = useSelector((state) => selectContactsStatus(state));
   const isError = useSelector((state) => selectContactsError(state));
-  
+
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchAllContacts());
@@ -27,7 +28,7 @@ function Contacts() {
 
   return (
     <div className="flex flex-col gap-5 flex-1">
-      <Header contacts={contacts}/>
+      <Header contacts={contacts} />
       <FiltredBox grid={grid} setGrid={setGrid} />
       <div
         className={`grid grid-cols-1 gap-2 ${
@@ -35,11 +36,13 @@ function Contacts() {
         }`}
       >
         {isError ? (
-          <p className="text-white">error ...</p>
+          <Error/>
         ) : status === "pending" ? (
-          <Loading/>
+          <Loading />
         ) : (
-          contacts.map((contact) => <Contact grid={grid} {...contact} key={contact.id}/>)
+          contacts.map((contact) => (
+            <Contact grid={grid} {...contact} key={contact.id} />
+          ))
         )}
       </div>
     </div>
