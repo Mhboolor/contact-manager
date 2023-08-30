@@ -1,7 +1,7 @@
 import React from "react";
 import { CiGrid2H, CiGrid41 } from "react-icons/ci";
 
-function FiltredBox({grid , setGrid}) {
+function FiltredBox({setGrid}) {
   return (
     <div className="flex items-center justify-between">
       <div className="flex gap-2 contacts-select">
@@ -12,7 +12,7 @@ function FiltredBox({grid , setGrid}) {
           <option value="1">ajab</option>
         </select>
       </div>
-      <div className="text-white text-2xl items-center gap-1 hidden sm:flex">
+      <div className="text-white text-2xl items-center gap-1 hidden lg:flex">
         <button className="hover:bg-gray-2 p-1 rounded-md duration-150 ease-in-out" onClick={() => setGrid(false)}>
           <CiGrid2H />
         </button>

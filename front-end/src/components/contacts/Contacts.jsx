@@ -29,21 +29,21 @@ function Contacts() {
   return (
     <div className="flex flex-col gap-5 flex-1">
       <Header contacts={contacts} />
-      <FiltredBox grid={grid} setGrid={setGrid} />
+      <FiltredBox setGrid={setGrid} />
       {isError ? (
         <Error />
       ) : status === "pending" ? (
         <Loading />
       ) : (
-        contacts.map((contact) => (
-          <div
-            className={`grid grid-cols-1 gap-2 ${
-              grid ? "sm:grid-cols-3" : "sm:grid-cols-1"
-            }`}
-          >
+        <div
+          className={`grid grid-cols-1 gap-2 ${
+            grid ? "lg:grid-cols-2" : "lg:grid-cols-1"
+          }`}
+        >
+          {contacts.map((contact) => (
             <Contact grid={grid} {...contact} key={contact.id} />
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );

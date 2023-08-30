@@ -13,7 +13,7 @@ function Contact({ grid, id, name, last, image, phone, email, relation }) {
       <div>
         <img src={image} alt="user_image" className="rounded-full w-14 h-14" />
       </div>
-      <div className="flex-1 flex flex-col">
+      <div className="md:flex-1 flex flex-col">
         <p className="text-white">{`${name} ${last}`}</p>
         <p>{relation}</p>
       </div>
