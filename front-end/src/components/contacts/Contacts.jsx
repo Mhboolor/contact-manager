@@ -30,21 +30,21 @@ function Contacts() {
     <div className="flex flex-col gap-5 flex-1">
       <Header contacts={contacts} />
       <FiltredBox grid={grid} setGrid={setGrid} />
-      <div
-        className={`grid grid-cols-1 gap-2 ${
-          grid ? "sm:grid-cols-3" : "sm:grid-cols-1"
-        }`}
-      >
-        {isError ? (
-          <Error/>
-        ) : status === "pending" ? (
-          <Loading />
-        ) : (
-          contacts.map((contact) => (
+      {isError ? (
+        <Error />
+      ) : status === "pending" ? (
+        <Loading />
+      ) : (
+        contacts.map((contact) => (
+          <div
+            className={`grid grid-cols-1 gap-2 ${
+              grid ? "sm:grid-cols-3" : "sm:grid-cols-1"
+            }`}
+          >
             <Contact grid={grid} {...contact} key={contact.id} />
-          ))
-        )}
-      </div>
+          </div>
+        ))
+      )}
     </div>
   );
 }
