@@ -3,8 +3,7 @@ import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { MdCamera, MdEmail, MdPhone } from "react-icons/md";
 import { TbDots } from "react-icons/tb";
 
-function Header({ name, last, image, single, job , company , tags }) {
-
+function Header({name, last, image, single, job , company , tags}) {
   return (
     <div className="flex flex-col items-center justify-center gap-5 text-gray-400 sm:flex-row relative">
       <div className="flex items-center gap-2 text-xl absolute top-0 right-8">

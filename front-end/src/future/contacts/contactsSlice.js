@@ -4,6 +4,8 @@ import {
   createAsyncThunk,
 } from "@reduxjs/toolkit";
 
+import axios from "axios"
+
 const baseUrl = "http://localhost:9000";
 
 const contactsAdapter = createEntityAdapter({});
@@ -17,6 +19,14 @@ export const fetchAllContacts = createAsyncThunk(
   async () => {
     const response = await fetch(`${baseUrl}/contacts`, { method: "GET" });
     return response.json();
+  }
+);
+
+export const addContact = createAsyncThunk(
+  "contacts/addContact",
+  async (contact) => {
+    const response = await axios.post(`${baseUrl}/contacts` , contact);
+    return response.data;
   }
 );
 
@@ -35,7 +45,10 @@ const cntactsSlice = createSlice({
       })
       .addCase(fetchAllContacts.rejected, (state, action) => {
         state.status = "failed";
-      });
+      })
+      .addCase(addContact.fulfilled , (state , action) => {
+        contactsAdapter.addOne(state , action.payload)
+      })
   },
 });
 
