@@ -7,16 +7,16 @@ import { useNavigate } from "react-router-dom";
 
 function AddContact() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    dispatch(addContact({  id: nanoid() , ...data}))
-    navigate("/")
-}
+    dispatch(addContact({ id: nanoid(), ...data }));
+    navigate("/");
+  };
 
   return (
     <div className="w-full h-full text-whit flex flex-col gap-5 pb-5">
@@ -242,13 +242,13 @@ function AddContact() {
           className="rounded bg-transparent border border-gray-600 p-2 text-white"
         >
           <option
-            value="single"
+            value="مجرد"
             className="text-black rounded-none font-semibold"
           >
             مجرد
           </option>
           <option
-            value="married"
+            value="متاهل"
             className="text-black rounded-none font-semibold"
           >
             متاهل
@@ -259,25 +259,25 @@ function AddContact() {
           className="rounded bg-transparent border border-gray-600 p-2 text-white"
         >
           <option
-            value="family"
+            value="خانواده"
             className="text-black rounded-none font-semibold"
           >
             خانواده
           </option>
           <option
-            value="friend"
+            value="دوست"
             className="text-black rounded-none font-semibold"
           >
             دوست
           </option>
           <option
-            value="colleague"
+            value="همکار"
             className="text-black rounded-none font-semibold"
           >
             همکار
           </option>
           <option
-            value="familiar"
+            value="آشنا"
             className="text-black rounded-none font-semibold"
           >
             آشنا

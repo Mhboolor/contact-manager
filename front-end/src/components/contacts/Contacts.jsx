@@ -23,6 +23,10 @@ function Contacts() {
         <Error />
       ) : status === "pending" ? (
         <Loading />
+      ) : contacts.length <= 0 ? (
+        <div className="w-full h-full flex items-center justify-center">
+          <p className="text-center text-white font-semibold text-lg">هیچ مخاطبی وجود ندارد</p>
+        </div>
       ) : (
         <div
           className={`grid grid-cols-1 gap-2 ${
