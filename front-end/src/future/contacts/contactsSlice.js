@@ -37,6 +37,14 @@ export const editFav = createAsyncThunk("contacts/etidFav", async (contact) => {
   return response.data;
 });
 
+export const delContact = createAsyncThunk(
+  "contacts/deleteContact",
+  async (contactId) => {
+    const response = await axios.delete(`${baseUrl}/contacts/${contactId}`);
+    return contactId;
+  }
+);
+
 const cntactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -62,7 +70,10 @@ const cntactsSlice = createSlice({
           id: action.payload.id,
           changes: { favorites: action.payload.favorites },
         });
-      });
+      })
+      .addCase(delContact.fulfilled , (state , action) => {
+        contactsAdapter.removeOne(state , action.payload)
+      })
   },
 });
 

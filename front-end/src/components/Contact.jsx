@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { delContact } from "../future/contacts/contactsSlice";
 
 function Contact({ grid, id, name, last, image, phone, email, relation }) {
+
+  const dispatch = useDispatch();
+
+  const deleteContact = (id) => {
+    dispatch(delContact(id))
+  }
 
   return (
     <div
@@ -32,8 +40,8 @@ function Contact({ grid, id, name, last, image, phone, email, relation }) {
         </div>
       </Link>
         <div className="flex items-center justify-center text-center rounded bg-black border border-gray-400 divide-x divide-x-reverse">
-          <button value={id} onClick={e => console.log(e.target.value)} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">ویرایش</button>
-          <button value={id} onClick={e => console.log(e.target.value)} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">حذف</button>
+          <button value={id} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">ویرایش</button>
+          <button value={id} onClick={e => deleteContact(e.target.value)} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">حذف</button>
         </div>
     </div>
   );
