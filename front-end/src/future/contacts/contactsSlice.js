@@ -3,8 +3,7 @@ import {
   createEntityAdapter,
   createAsyncThunk,
 } from "@reduxjs/toolkit";
-
-import axios from "axios"
+import axios from "axios";
 
 const baseUrl = "http://localhost:9000";
 
@@ -17,18 +16,23 @@ const initialState = contactsAdapter.getInitialState({
 export const fetchAllContacts = createAsyncThunk(
   "contacts/fetchAllContacts",
   async () => {
-    const response = await fetch(`${baseUrl}/contacts`, { method: "GET" });
-    return response.json();
+    const response = await axios.get(`${baseUrl}/contacts`);
+    return response.data;
   }
 );
 
 export const addContact = createAsyncThunk(
   "contacts/addContact",
   async (contact) => {
-    const response = await axios.post(`${baseUrl}/contacts` , contact);
+    const response = await axios.post(`${baseUrl}/contacts`, contact);
     return response.data;
   }
 );
+
+export const editFav = createAsyncThunk("contacts/etidFav", async (contact) => {
+  const response = await axios.put(`${baseUrl}/contacts/${contact.id}`, contact);
+  return response.data;
+});
 
 const cntactsSlice = createSlice({
   name: "contacts",
@@ -46,9 +50,17 @@ const cntactsSlice = createSlice({
       .addCase(fetchAllContacts.rejected, (state, action) => {
         state.status = "failed";
       })
-      .addCase(addContact.fulfilled , (state , action) => {
-        contactsAdapter.addOne(state , action.payload)
+      .addCase(addContact.fulfilled, (state, action) => {
+        contactsAdapter.addOne(state, action.payload);
+        state.status = "idle"
       })
+      // .addCase(editFav.fulfilled, (state, action) => {
+      //   const { id } = action.payload;
+      //   const updatedContactIndex = state.contacts.findIndex(
+      //     (contact) => contact.id === id
+      //   );
+      //   state.contacts[updatedContactIndex] = action.payload;
+      // });
   },
 });
 
