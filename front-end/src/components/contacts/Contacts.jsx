@@ -9,6 +9,7 @@ import {
 import Loading from "../Loading";
 import Error from "../Error";
 import { useParams } from "react-router-dom";
+import NoneContacts from "../NoneContacts";
 
 function Contacts() {
   const [grid, setGrid] = useState(false);
@@ -50,20 +51,20 @@ function Contacts() {
       ) : status === "pending" ? (
         <Loading />
       ) : contacts.length <= 0 ? (
-        <div className="w-full h-full flex items-center justify-center">
-          <p className="text-center text-white font-semibold text-lg">
-            هیچ مخاطبی وجود ندارد
-          </p>
-        </div>
+        <NoneContacts />
       ) : (
         <div
           className={`grid grid-cols-1 gap-2 ${
             grid ? "lg:grid-cols-2" : "lg:grid-cols-1"
           }`}
         >
-          {content.map((contact) => (
-            <Contact grid={grid} {...contact} key={contact.id} />
-          ))}
+          {content.length === 0 ? (
+            <NoneContacts />
+          ) : (
+            content.map((contact) => (
+              <Contact grid={grid} {...contact} key={contact.id} />
+            ))
+          )}
         </div>
       )}
     </div>

@@ -71,9 +71,9 @@ const cntactsSlice = createSlice({
           changes: { favorites: action.payload.favorites },
         });
       })
-      .addCase(delContact.fulfilled , (state , action) => {
-        contactsAdapter.removeOne(state , action.payload)
-      })
+      .addCase(delContact.fulfilled, (state, action) => {
+        contactsAdapter.removeOne(state, action.payload);
+      });
   },
 });
 
