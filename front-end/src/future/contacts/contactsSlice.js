@@ -30,7 +30,10 @@ export const addContact = createAsyncThunk(
 );
 
 export const editFav = createAsyncThunk("contacts/etidFav", async (contact) => {
-  const response = await axios.put(`${baseUrl}/contacts/${contact.id}`, contact);
+  const response = await axios.put(
+    `${baseUrl}/contacts/${contact.id}`,
+    contact
+  );
   return response.data;
 });
 
@@ -52,15 +55,14 @@ const cntactsSlice = createSlice({
       })
       .addCase(addContact.fulfilled, (state, action) => {
         contactsAdapter.addOne(state, action.payload);
-        state.status = "idle"
+        state.status = "idle";
       })
-      // .addCase(editFav.fulfilled, (state, action) => {
-      //   const { id } = action.payload;
-      //   const updatedContactIndex = state.contacts.findIndex(
-      //     (contact) => contact.id === id
-      //   );
-      //   state.contacts[updatedContactIndex] = action.payload;
-      // });
+      .addCase(editFav.fulfilled, (state, action) => {
+        contactsAdapter.updateOne(state, {
+          id: action.payload.id,
+          changes: { fav: action.payload.fav },
+        });
+      });
   },
 });
 
