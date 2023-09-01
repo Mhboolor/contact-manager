@@ -45,6 +45,17 @@ export const delContact = createAsyncThunk(
   }
 );
 
+export const editContact = createAsyncThunk(
+  "contacts/editContact",
+  async (contact) => {
+    const response = await axios.put(
+      `${baseUrl}/contacts/${contact.id}`,
+      contact
+    );
+    return response.data;
+  }
+);
+
 const cntactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -73,7 +84,13 @@ const cntactsSlice = createSlice({
       })
       .addCase(delContact.fulfilled, (state, action) => {
         contactsAdapter.removeOne(state, action.payload);
-      });
+      })
+      .addCase(editContact.fulfilled , (state , action) => {
+        contactsAdapter.updateOne(state , {
+          id : action.payload.id,
+          changes : action.payload
+        })
+      })
   },
 });
 

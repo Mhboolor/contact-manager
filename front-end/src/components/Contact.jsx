@@ -40,7 +40,7 @@ function Contact({ grid, id, name, last, image, phone, email, relation }) {
         </div>
       </Link>
         <div className="flex items-center justify-center text-center rounded bg-black border border-gray-400 divide-x divide-x-reverse">
-          <button value={id} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">ویرایش</button>
+          <Link to={`/edit-contact/${id}`} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">ویرایش</Link>
           <button value={id} onClick={e => deleteContact(e.target.value)} className="w-full px-2 py-1 hover:bg-gray-2 duration-150 ease-in-out hover:text-white">حذف</button>
         </div>
     </div>
