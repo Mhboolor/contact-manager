@@ -60,7 +60,7 @@ const cntactsSlice = createSlice({
       .addCase(editFav.fulfilled, (state, action) => {
         contactsAdapter.updateOne(state, {
           id: action.payload.id,
-          changes: { fav: action.payload.fav },
+          changes: { favorites: action.payload.favorites },
         });
       });
   },

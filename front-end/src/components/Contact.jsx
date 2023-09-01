@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Contact({ grid, id, name, last, image, phone, email, relation }) {
   return (
     <Link
-      to={`/${id}`}
+      to={`/user/${id}`}
       className={`text-zinc-300 gap-4 rounded-md p-2 duration-150 ease-in-out hover:bg-gray-2 flex flex-col items-center text-center hover:text-white ${
         grid ? "sm:flex-col" : "sm:flex-row sm:text-start"
       }`}

@@ -10,9 +10,8 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Contacts /> },
-      { path: "/favorits", element: <Contacts /> },
-      { path: "/category/:categoryName:", element: <Contacts /> },
-      { path: "/:userId", element: <User /> },
+      { path: "/:categoryName", element: <Contacts/> },
+      { path: "/user/:userId", element: <User /> },
       { path: "/add-contact", element: <AddContact /> },
     ],
   },

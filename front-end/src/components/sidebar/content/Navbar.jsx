@@ -25,7 +25,7 @@ function Navbar() {
         <li>
           <NavLink
             className={`flex items-center gap-2 py-1 px-1 rounded-md duration-200 ease-in-out hover:bg-gray-2`}
-            to={"/"}
+            to={"/favorites"}
           >
             <MdOutlineFavoriteBorder className="text-xl" />
             علاقه مندی ها
@@ -50,6 +50,7 @@ function Navbar() {
             <li>
               <NavLink
                 className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+                to={"/family"}
               >
                 خانواده
               </NavLink>
@@ -57,6 +58,7 @@ function Navbar() {
             <li>
               <NavLink
                 className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+                to={"/frends"}
               >
                 دوست
               </NavLink>
@@ -64,6 +66,7 @@ function Navbar() {
             <li>
               <NavLink
                 className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+                to={"/collage"}
               >
                 همکار
               </NavLink>
@@ -71,8 +74,9 @@ function Navbar() {
             <li>
               <NavLink
                 className={`flex items-center gap-2 py-1 pr-8 rounded-md duration-200 ease-in-out hover:bg-gray-2 hover:text-white`}
+                to={"/familiar"}
               >
-                ورزش
+                آشنا
               </NavLink>
             </li>
           </ul>

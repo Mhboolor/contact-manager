@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Header, Info, Note, Reminder } from "./content";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,7 @@ function User() {
     dispatch(
       editFav({
         ...userInfo,
-        fav : !userInfo.fav
+        favorites : !userInfo.favorites
       })
     );
   };
